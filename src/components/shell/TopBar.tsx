@@ -8,10 +8,9 @@ import { Avatar } from "@/components/ui-kit/Avatar"
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuLabel,
   DropdownMenuTrigger,
-  DropdownMenuItem,
 } from "@/components/ui/dropdown-menu"
+import { switchPerson } from "@/app/actions/person"
 
 /** Peoplebase mark: teal rounded square with tent/mountain glyph. */
 function Mark() {
@@ -70,9 +69,11 @@ interface TopBarProps {
   pendingApprovals?: number
   /** Current user shown in the switcher avatar. */
   currentUser?: { name: string; initials: string }
+  /** When true, shows the amber "nanečisto" scripted-mode badge. */
+  scripted?: boolean
 }
 
-export function TopBar({ pendingApprovals = 0, currentUser }: TopBarProps) {
+export function TopBar({ pendingApprovals = 0, currentUser, scripted }: TopBarProps) {
   const pathname = usePathname()
   const isRequests = pathname === "/" || pathname.startsWith("/pozadavky")
   const isApprovals = pathname.startsWith("/ke-schvaleni")
@@ -112,6 +113,13 @@ export function TopBar({ pendingApprovals = 0, currentUser }: TopBarProps) {
       {/* ── Spacer ────────────────────────────────────────────── */}
       <span className="flex-1" />
 
+      {/* ── Scripted-mode badge ───────────────────────────────── */}
+      {scripted && (
+        <span className="text-[10px] font-semibold text-wait bg-wait-soft border border-wait-line rounded-chip px-1.5 py-0.5 leading-none">
+          {copy.shell.scriptedBadge}
+        </span>
+      )}
+
       {/* ── Tenant name ───────────────────────────────────────── */}
       <span className="text-[11.5px] text-muted hidden sm:block">
         {copy.shell.tenant}
@@ -126,17 +134,27 @@ export function TopBar({ pendingApprovals = 0, currentUser }: TopBarProps) {
           <Avatar initials={user.initials} />
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-44">
-          <DropdownMenuLabel className="text-[10.5px] text-faint font-semibold uppercase tracking-[.06em] pb-1">
+          <p className="text-[10.5px] text-faint font-semibold uppercase tracking-[.06em] px-2 pb-1">
             {copy.shell.switcherHeading}
-          </DropdownMenuLabel>
-          <DropdownMenuItem className="gap-2 text-[12.5px]">
-            <Avatar initials="JD" />
-            <span>Jana Dvořáková</span>
-          </DropdownMenuItem>
-          <DropdownMenuItem className="gap-2 text-[12.5px]">
-            <Avatar initials="PM" />
-            <span>Petra Málková</span>
-          </DropdownMenuItem>
+          </p>
+          <form action={switchPerson.bind(null, "u_jana")} className="w-full">
+            <button
+              type="submit"
+              className="flex w-full items-center gap-2 text-[12.5px] rounded-sm px-2 py-1.5 hover:bg-well cursor-pointer transition-colors"
+            >
+              <Avatar initials="JD" />
+              <span>Jana Dvořáková</span>
+            </button>
+          </form>
+          <form action={switchPerson.bind(null, "u_petra")} className="w-full">
+            <button
+              type="submit"
+              className="flex w-full items-center gap-2 text-[12.5px] rounded-sm px-2 py-1.5 hover:bg-well cursor-pointer transition-colors"
+            >
+              <Avatar initials="PM" />
+              <span>Petra Málková</span>
+            </button>
+          </form>
         </DropdownMenuContent>
       </DropdownMenu>
     </header>
