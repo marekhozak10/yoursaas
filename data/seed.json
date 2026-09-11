@@ -6,6 +6,7 @@
       "nameGenitive": "Jany Dvořákové",
       "initials": "JD",
       "title": "ředitelka provozu, střední Evropa",
+      "titleGenitive": "ředitelky provozu, střední Evropa",
       "email": "jana.dvorakova@alpinahotels.example",
       "role": "manager"
     },
@@ -15,6 +16,7 @@
       "nameGenitive": "Petry Málkové",
       "initials": "PM",
       "title": "HR partnerka",
+      "titleGenitive": "HR partnerky",
       "email": "petra.malkova@alpinahotels.example",
       "role": "hrbp"
     }

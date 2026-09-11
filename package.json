@@ -2,12 +2,14 @@
   "name": "peoplebase",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "reset": "node --experimental-strip-types --experimental-detect-module scripts/reset.ts"
+    "reset": "node --experimental-strip-types --experimental-detect-module scripts/reset.ts",
+    "test": "node --import ./scripts/loader.mjs --experimental-strip-types scripts/smoke.ts"
   },
   "dependencies": {
     "@base-ui/react": "^1.8.0",

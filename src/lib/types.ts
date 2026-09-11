@@ -6,6 +6,7 @@ export type User = {
   nameGenitive: string  // 'Jany Dvořákové' — used in approval lead line
   initials: string      // 'JD'
   title: string         // 'ředitelka provozu, střední Evropa'
+  titleGenitive: string // 'ředitelky provozu, střední Evropa' — used in approval lead line
   email: string
   role: Role
 }

@@ -52,6 +52,9 @@
   --color-wait-soft:    #f6efdd;
   --color-wait-line:    #e8dcbe;
 
+  /* animations */
+  --animate-fade-rise: fadeRise 250ms ease-out both;
+
   /* radii */
   --radius-chip:   6px;
   --radius-ctl:    7px;
@@ -111,6 +114,11 @@
   --radius-md:  calc(var(--radius) * 0.8);
   --radius-lg:  var(--radius);
   --radius-xl:  calc(var(--radius) * 1.4);
+}
+
+@keyframes fadeRise {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0);   }
 }
 
 @layer base {

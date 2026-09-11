@@ -1,4 +1,3 @@
-import { TopBar } from "@/components/shell/TopBar"
 import { StatusPill } from "@/components/ui-kit/StatusPill"
 import { Avatar } from "@/components/ui-kit/Avatar"
 import { Card } from "@/components/ui-kit/Card"
@@ -70,9 +69,6 @@ const allStatuses: StatusKey[] = [
 export default function StyleGuidePage() {
   return (
     <div className="min-h-screen bg-canvas text-ink">
-      {/* Live TopBar with mock data */}
-      <TopBar pendingApprovals={2} currentUser={{ name: "Jana Dvořáková", initials: "JD" }} />
-
       <main className="mx-auto max-w-4xl px-8 py-10 space-y-12">
 
         {/* ── Status pills ─────────────────────────────────────── */}
