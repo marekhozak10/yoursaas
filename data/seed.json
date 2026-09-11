@@ -1,0 +1,566 @@
+{
+  "users": [
+    {
+      "id": "u_jana",
+      "name": "Jana Dvořáková",
+      "nameGenitive": "Jany Dvořákové",
+      "initials": "JD",
+      "title": "ředitelka provozu, střední Evropa",
+      "email": "jana.dvorakova@alpinahotels.example",
+      "role": "manager"
+    },
+    {
+      "id": "u_petra",
+      "name": "Petra Málková",
+      "nameGenitive": "Petry Málkové",
+      "initials": "PM",
+      "title": "HR partnerka",
+      "email": "petra.malkova@alpinahotels.example",
+      "role": "hrbp"
+    }
+  ],
+  "teams": [
+    {
+      "id": "t_revmgmt",
+      "name": "Revenue management, střední Evropa",
+      "costCenter": "CE-RM-01"
+    },
+    {
+      "id": "t_recepce",
+      "name": "Recepce, Praha",
+      "costCenter": "CE-FO-04"
+    },
+    {
+      "id": "t_fnb",
+      "name": "Gastro, Vídeň",
+      "costCenter": "AT-FB-02"
+    }
+  ],
+  "bands": [
+    {
+      "teamId": "t_revmgmt",
+      "seniority": "medior",
+      "band": "Pásmo 3",
+      "currency": "CZK",
+      "minMinor": 6200000,
+      "maxMinor": 8200000
+    },
+    {
+      "teamId": "t_revmgmt",
+      "seniority": "senior",
+      "band": "Pásmo 4",
+      "currency": "CZK",
+      "minMinor": 9500000,
+      "maxMinor": 12000000
+    },
+    {
+      "teamId": "t_revmgmt",
+      "seniority": "lead",
+      "band": "Pásmo 5",
+      "currency": "CZK",
+      "minMinor": 12500000,
+      "maxMinor": 16500000
+    },
+    {
+      "teamId": "t_recepce",
+      "seniority": "junior",
+      "band": "Pásmo 1",
+      "currency": "CZK",
+      "minMinor": 3200000,
+      "maxMinor": 4100000
+    },
+    {
+      "teamId": "t_recepce",
+      "seniority": "medior",
+      "band": "Pásmo 2",
+      "currency": "CZK",
+      "minMinor": 4400000,
+      "maxMinor": 5800000
+    },
+    {
+      "teamId": "t_recepce",
+      "seniority": "senior",
+      "band": "Pásmo 3",
+      "currency": "CZK",
+      "minMinor": 6000000,
+      "maxMinor": 7800000
+    },
+    {
+      "teamId": "t_fnb",
+      "seniority": "junior",
+      "band": "Pásmo 1",
+      "currency": "CZK",
+      "minMinor": 3100000,
+      "maxMinor": 4000000
+    },
+    {
+      "teamId": "t_fnb",
+      "seniority": "medior",
+      "band": "Pásmo 2",
+      "currency": "CZK",
+      "minMinor": 4300000,
+      "maxMinor": 5600000
+    },
+    {
+      "teamId": "t_fnb",
+      "seniority": "senior",
+      "band": "Pásmo 3",
+      "currency": "CZK",
+      "minMinor": 5800000,
+      "maxMinor": 7500000
+    }
+  ],
+  "requests": [
+    {
+      "id": "r_009",
+      "publicId": "POZ-2026-009",
+      "requesterId": "u_jana",
+      "teamId": "t_recepce",
+      "title": "Vedoucí směny na recepci",
+      "seniority": "medior",
+      "location": "Praha, hybridně",
+      "targetStartDate": "2026-11-08",
+      "justification": "Seedovaná historie, schválně krátká.",
+      "status": "open",
+      "createdAt": "2026-09-09T08:00:00Z",
+      "updatedAt": "2026-09-09T09:30:00Z",
+      "context": {
+        "band": "Pásmo 3",
+        "medianTimeToFillDays": 39,
+        "lastAdWrittenAt": "2026-07-31T08:00:00Z"
+      },
+      "draft": null,
+      "approval": {
+        "approverId": "u_petra",
+        "decision": "approved",
+        "decidedAt": "2026-09-09T10:20:00Z",
+        "comment": null
+      },
+      "systems": [
+        {
+          "key": "ats",
+          "status": "created",
+          "ref": "ATS-8712",
+          "url": "#",
+          "updatedAt": "2026-09-28T08:00:00Z"
+        },
+        {
+          "key": "job_board",
+          "status": "created",
+          "ref": "JB-41209",
+          "url": "#",
+          "updatedAt": "2026-09-28T08:00:00Z"
+        },
+        {
+          "key": "slack",
+          "status": "created",
+          "ref": "#nabor-vedouci-smeny",
+          "url": "#",
+          "updatedAt": "2026-09-28T08:00:00Z"
+        },
+        {
+          "key": "drive",
+          "status": "created",
+          "ref": "Scorecards / Vedoucí směny",
+          "url": "#",
+          "updatedAt": "2026-09-28T08:00:00Z"
+        }
+      ],
+      "events": [
+        {
+          "id": "r_009_1",
+          "at": "2026-09-09T08:00:00Z",
+          "type": "local.submitted",
+          "actor": "u_jana",
+          "summary": "Požadavek odeslán"
+        },
+        {
+          "id": "r_009_2",
+          "at": "2026-09-09T08:01:00Z",
+          "type": "flow.started",
+          "actor": "workflow",
+          "summary": "Workflow převzalo požadavek"
+        },
+        {
+          "id": "r_009_3",
+          "at": "2026-09-09T08:02:00Z",
+          "type": "draft.ready",
+          "actor": "agent",
+          "summary": "Inzerát napsaný, pět kritérií, spočítaný náklad"
+        },
+        {
+          "id": "r_009_4",
+          "at": "2026-09-09T10:20:00Z",
+          "type": "local.approved",
+          "actor": "u_petra",
+          "summary": "Petra Málková schválila"
+        },
+        {
+          "id": "r_009_5",
+          "at": "2026-09-09T08:08:00Z",
+          "type": "flow.completed",
+          "actor": "workflow",
+          "summary": "Pozice je otevřená"
+        }
+      ],
+      "callbackToken": "seed_token_r_009"
+    },
+    {
+      "id": "r_010",
+      "publicId": "POZ-2026-010",
+      "requesterId": "u_jana",
+      "teamId": "t_fnb",
+      "title": "Sous chef",
+      "seniority": "senior",
+      "location": "Vídeň, na place",
+      "targetStartDate": "2026-11-11",
+      "justification": "Seedovaná historie, schválně krátká.",
+      "status": "open",
+      "createdAt": "2026-09-12T08:00:00Z",
+      "updatedAt": "2026-09-12T09:30:00Z",
+      "context": {
+        "band": "Pásmo 3",
+        "medianTimeToFillDays": 39,
+        "lastAdWrittenAt": "2026-08-03T08:00:00Z"
+      },
+      "draft": null,
+      "approval": {
+        "approverId": "u_petra",
+        "decision": "approved",
+        "decidedAt": "2026-09-12T10:20:00Z",
+        "comment": null
+      },
+      "systems": [
+        {
+          "key": "ats",
+          "status": "created",
+          "ref": "ATS-8730",
+          "url": "#",
+          "updatedAt": "2026-09-28T08:00:00Z"
+        },
+        {
+          "key": "job_board",
+          "status": "created",
+          "ref": "JB-41355",
+          "url": "#",
+          "updatedAt": "2026-09-28T08:00:00Z"
+        },
+        {
+          "key": "slack",
+          "status": "created",
+          "ref": "#nabor-sous-chef",
+          "url": "#",
+          "updatedAt": "2026-09-28T08:00:00Z"
+        },
+        {
+          "key": "drive",
+          "status": "created",
+          "ref": "Scorecards / Sous chef",
+          "url": "#",
+          "updatedAt": "2026-09-28T08:00:00Z"
+        }
+      ],
+      "events": [
+        {
+          "id": "r_010_1",
+          "at": "2026-09-12T08:00:00Z",
+          "type": "local.submitted",
+          "actor": "u_jana",
+          "summary": "Požadavek odeslán"
+        },
+        {
+          "id": "r_010_2",
+          "at": "2026-09-12T08:01:00Z",
+          "type": "flow.started",
+          "actor": "workflow",
+          "summary": "Workflow převzalo požadavek"
+        },
+        {
+          "id": "r_010_3",
+          "at": "2026-09-12T08:02:00Z",
+          "type": "draft.ready",
+          "actor": "agent",
+          "summary": "Inzerát napsaný, pět kritérií, spočítaný náklad"
+        },
+        {
+          "id": "r_010_4",
+          "at": "2026-09-12T10:20:00Z",
+          "type": "local.approved",
+          "actor": "u_petra",
+          "summary": "Petra Málková schválila"
+        },
+        {
+          "id": "r_010_5",
+          "at": "2026-09-12T08:08:00Z",
+          "type": "flow.completed",
+          "actor": "workflow",
+          "summary": "Pozice je otevřená"
+        }
+      ],
+      "callbackToken": "seed_token_r_010"
+    },
+    {
+      "id": "r_011",
+      "publicId": "POZ-2026-011",
+      "requesterId": "u_jana",
+      "teamId": "t_recepce",
+      "title": "Noční recepční",
+      "seniority": "junior",
+      "location": "Praha, hybridně",
+      "targetStartDate": "2026-11-15",
+      "justification": "Seedovaná historie, schválně krátká.",
+      "status": "declined",
+      "createdAt": "2026-09-16T08:00:00Z",
+      "updatedAt": "2026-09-16T09:30:00Z",
+      "context": {
+        "band": "Pásmo 3",
+        "medianTimeToFillDays": 39,
+        "lastAdWrittenAt": "2026-08-07T08:00:00Z"
+      },
+      "draft": null,
+      "approval": {
+        "approverId": "u_petra",
+        "decision": "declined",
+        "decidedAt": "2026-09-16T10:20:00Z",
+        "comment": "Pokryjte to zatím ze stávajícího rozpisu, vrátíme se k tomu v lednu."
+      },
+      "systems": [
+        {
+          "key": "ats",
+          "status": "pending"
+        },
+        {
+          "key": "job_board",
+          "status": "pending"
+        },
+        {
+          "key": "slack",
+          "status": "pending"
+        },
+        {
+          "key": "drive",
+          "status": "pending"
+        }
+      ],
+      "events": [
+        {
+          "id": "r_011_1",
+          "at": "2026-09-16T08:00:00Z",
+          "type": "local.submitted",
+          "actor": "u_jana",
+          "summary": "Požadavek odeslán"
+        },
+        {
+          "id": "r_011_2",
+          "at": "2026-09-16T08:01:00Z",
+          "type": "flow.started",
+          "actor": "workflow",
+          "summary": "Workflow převzalo požadavek"
+        },
+        {
+          "id": "r_011_3",
+          "at": "2026-09-16T08:02:00Z",
+          "type": "draft.ready",
+          "actor": "agent",
+          "summary": "Inzerát napsaný, pět kritérií, spočítaný náklad"
+        },
+        {
+          "id": "r_011_4",
+          "at": "2026-09-16T10:20:00Z",
+          "type": "local.declined",
+          "actor": "u_petra",
+          "summary": "Petra Málková zamítla"
+        }
+      ],
+      "callbackToken": "seed_token_r_011"
+    },
+    {
+      "id": "r_012",
+      "publicId": "POZ-2026-012",
+      "requesterId": "u_jana",
+      "teamId": "t_recepce",
+      "title": "Rezervační referent",
+      "seniority": "junior",
+      "location": "Praha, hybridně",
+      "targetStartDate": "2026-11-18",
+      "justification": "Seedovaná historie, schválně krátká.",
+      "status": "open",
+      "createdAt": "2026-09-19T08:00:00Z",
+      "updatedAt": "2026-09-19T09:30:00Z",
+      "context": {
+        "band": "Pásmo 3",
+        "medianTimeToFillDays": 39,
+        "lastAdWrittenAt": "2026-08-10T08:00:00Z"
+      },
+      "draft": null,
+      "approval": {
+        "approverId": "u_petra",
+        "decision": "approved",
+        "decidedAt": "2026-09-19T10:20:00Z",
+        "comment": null
+      },
+      "systems": [
+        {
+          "key": "ats",
+          "status": "created",
+          "ref": "ATS-8798",
+          "url": "#",
+          "updatedAt": "2026-09-28T08:00:00Z"
+        },
+        {
+          "key": "job_board",
+          "status": "created",
+          "ref": "JB-41502",
+          "url": "#",
+          "updatedAt": "2026-09-28T08:00:00Z"
+        },
+        {
+          "key": "slack",
+          "status": "created",
+          "ref": "#nabor-rezervace",
+          "url": "#",
+          "updatedAt": "2026-09-28T08:00:00Z"
+        },
+        {
+          "key": "drive",
+          "status": "created",
+          "ref": "Scorecards / Rezervace",
+          "url": "#",
+          "updatedAt": "2026-09-28T08:00:00Z"
+        }
+      ],
+      "events": [
+        {
+          "id": "r_012_1",
+          "at": "2026-09-19T08:00:00Z",
+          "type": "local.submitted",
+          "actor": "u_jana",
+          "summary": "Požadavek odeslán"
+        },
+        {
+          "id": "r_012_2",
+          "at": "2026-09-19T08:01:00Z",
+          "type": "flow.started",
+          "actor": "workflow",
+          "summary": "Workflow převzalo požadavek"
+        },
+        {
+          "id": "r_012_3",
+          "at": "2026-09-19T08:02:00Z",
+          "type": "draft.ready",
+          "actor": "agent",
+          "summary": "Inzerát napsaný, pět kritérií, spočítaný náklad"
+        },
+        {
+          "id": "r_012_4",
+          "at": "2026-09-19T10:20:00Z",
+          "type": "local.approved",
+          "actor": "u_petra",
+          "summary": "Petra Málková schválila"
+        },
+        {
+          "id": "r_012_5",
+          "at": "2026-09-19T08:08:00Z",
+          "type": "flow.completed",
+          "actor": "workflow",
+          "summary": "Pozice je otevřená"
+        }
+      ],
+      "callbackToken": "seed_token_r_012"
+    },
+    {
+      "id": "r_013",
+      "publicId": "POZ-2026-013",
+      "requesterId": "u_jana",
+      "teamId": "t_revmgmt",
+      "title": "Revenue analytik",
+      "seniority": "medior",
+      "location": "Praha, hybridně",
+      "targetStartDate": "2026-11-26",
+      "justification": "Seedovaná historie, schválně krátká.",
+      "status": "open",
+      "createdAt": "2026-09-27T08:00:00Z",
+      "updatedAt": "2026-09-27T09:30:00Z",
+      "context": {
+        "band": "Pásmo 3",
+        "medianTimeToFillDays": 39,
+        "lastAdWrittenAt": "2026-08-18T08:00:00Z"
+      },
+      "draft": null,
+      "approval": {
+        "approverId": "u_petra",
+        "decision": "approved",
+        "decidedAt": "2026-09-27T10:20:00Z",
+        "comment": null
+      },
+      "systems": [
+        {
+          "key": "ats",
+          "status": "created",
+          "ref": "ATS-8835",
+          "url": "#",
+          "updatedAt": "2026-09-28T08:00:00Z"
+        },
+        {
+          "key": "job_board",
+          "status": "created",
+          "ref": "JB-41688",
+          "url": "#",
+          "updatedAt": "2026-09-28T08:00:00Z"
+        },
+        {
+          "key": "slack",
+          "status": "created",
+          "ref": "#nabor-revenue-analytik",
+          "url": "#",
+          "updatedAt": "2026-09-28T08:00:00Z"
+        },
+        {
+          "key": "drive",
+          "status": "created",
+          "ref": "Scorecards / Revenue analytik",
+          "url": "#",
+          "updatedAt": "2026-09-28T08:00:00Z"
+        }
+      ],
+      "events": [
+        {
+          "id": "r_013_1",
+          "at": "2026-09-27T08:00:00Z",
+          "type": "local.submitted",
+          "actor": "u_jana",
+          "summary": "Požadavek odeslán"
+        },
+        {
+          "id": "r_013_2",
+          "at": "2026-09-27T08:01:00Z",
+          "type": "flow.started",
+          "actor": "workflow",
+          "summary": "Workflow převzalo požadavek"
+        },
+        {
+          "id": "r_013_3",
+          "at": "2026-09-27T08:02:00Z",
+          "type": "draft.ready",
+          "actor": "agent",
+          "summary": "Inzerát napsaný, pět kritérií, spočítaný náklad"
+        },
+        {
+          "id": "r_013_4",
+          "at": "2026-09-27T10:20:00Z",
+          "type": "local.approved",
+          "actor": "u_petra",
+          "summary": "Petra Málková schválila"
+        },
+        {
+          "id": "r_013_5",
+          "at": "2026-09-27T08:08:00Z",
+          "type": "flow.completed",
+          "actor": "workflow",
+          "summary": "Pozice je otevřená"
+        }
+      ],
+      "callbackToken": "seed_token_r_013"
+    }
+  ]
+}
