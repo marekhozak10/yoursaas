@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "reset": "cp data/seed.json data/store.json"
+    "reset": "node --experimental-strip-types --experimental-detect-module scripts/reset.ts"
   },
   "dependencies": {
     "@base-ui/react": "^1.8.0",

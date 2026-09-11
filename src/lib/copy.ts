@@ -4,16 +4,11 @@
  * Never add a Czech string literal anywhere else in the codebase.
  */
 
-export type StatusKey =
-  | 'submitted'
-  | 'processing'
-  | 'awaiting_approval'
-  | 'approved'
-  | 'open'
-  | 'declined'
-  | 'failed'
+import type { RequestStatus, SystemKey } from "@/lib/types"
 
-export type SystemKey = 'ats' | 'job_board' | 'slack' | 'drive'
+// Re-export with the names used in components
+export type StatusKey = RequestStatus
+export type { SystemKey }
 
 export const copy = {
   /* ── Shell ──────────────────────────────────────────────────────────── */
