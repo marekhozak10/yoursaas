@@ -25,13 +25,13 @@ export const copy = {
 
   /* ── Status labels ──────────────────────────────────────────────────── */
   statusLabels: {
-    submitted:          'Odesláno',
-    processing:         'Probíhá',
-    awaiting_approval:  'Čeká na schválení',
-    approved:           'Schváleno',
-    open:               'Otevřeno',
-    declined:           'Zamítnuto',
-    failed:             'Chyba',
+    submitted:          'Požadavek odeslán',
+    processing:         'Požadavek odeslán',
+    awaiting_approval:  'Požadavek odeslán',
+    approved:           'Požadavek schválen',
+    open:               'Požadavek schválen',
+    declined:           'Požadavek zamítnut',
+    failed:             'Požadavek zamítnut',
   } as Record<StatusKey, string>,
 
   /* ── List ───────────────────────────────────────────────────────────── */
@@ -46,11 +46,10 @@ export const copy = {
       updated:   'Aktualizováno',
     },
     filters: {
-      all:              'Vše',
-      inProgress:       'Probíhá',
-      awaitingApproval: 'Ke schválení',
-      open:             'Otevřené',
-      declined:         'Zamítnuté',
+      all:       'Vše',
+      submitted: 'Odesláno',
+      approved:  'Schváleno',
+      declined:  'Zamítnuto',
     },
     empty: 'Zatím tu nic není. První požadavek začíná formulářem.',
   },

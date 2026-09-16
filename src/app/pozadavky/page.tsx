@@ -8,25 +8,23 @@ import { StatusPill } from "@/components/ui-kit/StatusPill"
 import { Avatar } from "@/components/ui-kit/Avatar"
 import type { RequestStatus } from "@/lib/types"
 
-type FilterKey = "all" | "processing" | "awaiting_approval" | "open" | "declined"
+type FilterKey = "all" | "submitted" | "approved" | "declined"
 
 const filterStatuses: Record<FilterKey, RequestStatus[]> = {
-  all: [],
-  processing: ["submitted", "processing"],
-  awaiting_approval: ["awaiting_approval"],
-  open: ["open"],
-  declined: ["declined", "failed"],
+  all:       [],
+  submitted: ["submitted", "processing", "awaiting_approval"],
+  approved:  ["approved", "open"],
+  declined:  ["declined", "failed"],
 }
 
 const filterLabels: Record<FilterKey, string> = {
-  all: copy.list.filters.all,
-  processing: copy.list.filters.inProgress,
-  awaiting_approval: copy.list.filters.awaitingApproval,
-  open: copy.list.filters.open,
-  declined: copy.list.filters.declined,
+  all:       copy.list.filters.all,
+  submitted: copy.list.filters.submitted,
+  approved:  copy.list.filters.approved,
+  declined:  copy.list.filters.declined,
 }
 
-const filterOrder: FilterKey[] = ["all", "processing", "awaiting_approval", "open", "declined"]
+const filterOrder: FilterKey[] = ["all", "submitted", "approved", "declined"]
 
 export default async function PozadavkyPage({
   searchParams,
