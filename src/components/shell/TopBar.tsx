@@ -78,7 +78,7 @@ export function TopBar({ pendingApprovals = 0, currentUser, scripted }: TopBarPr
   const isRequests = pathname === "/" || pathname.startsWith("/pozadavky")
   const isApprovals = pathname.startsWith("/ke-schvaleni")
 
-  const user = currentUser ?? { name: "Jana Dvořáková", initials: "JD" }
+  const user = currentUser ?? { name: "Matouš Vrba", initials: "MV" }
 
   return (
     <header
@@ -142,8 +142,8 @@ export function TopBar({ pendingApprovals = 0, currentUser, scripted }: TopBarPr
               type="submit"
               className="flex w-full items-center gap-2 text-[12.5px] rounded-sm px-2 py-1.5 hover:bg-well cursor-pointer transition-colors"
             >
-              <Avatar initials="JD" />
-              <span>Jana Dvořáková</span>
+              <Avatar initials="MV" />
+              <span>Matouš Vrba</span>
             </button>
           </form>
           <form action={switchPerson.bind(null, "u_petra")} className="w-full">

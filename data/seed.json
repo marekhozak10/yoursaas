@@ -2,12 +2,12 @@
   "users": [
     {
       "id": "u_jana",
-      "name": "Jana Dvořáková",
-      "nameGenitive": "Jany Dvořákové",
-      "initials": "JD",
-      "title": "ředitelka provozu, střední Evropa",
-      "titleGenitive": "ředitelky provozu, střední Evropa",
-      "email": "jana.dvorakova@alpinahotels.example",
+      "name": "Matouš Vrba",
+      "nameGenitive": "Matouše Vrby",
+      "initials": "MV",
+      "title": "ředitel provozu, střední Evropa",
+      "titleGenitive": "ředitele provozu, střední Evropa",
+      "email": "matous.vrba@alpinahotels.example",
       "role": "manager"
     },
     {
