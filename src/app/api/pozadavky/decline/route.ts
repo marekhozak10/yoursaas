@@ -3,6 +3,7 @@ import { nanoid } from 'nanoid'
 import { getStore } from '@/lib/store'
 import { notifyDecision } from '@/lib/appmixer'
 import { copy } from '@/lib/copy'
+import { isTerminal } from '@/lib/types'
 
 /**
  * POST /api/pozadavky/decline
@@ -47,7 +48,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
   const token = authHeader.startsWith('Bearer ') ? authHeader.slice(7) : ''
 
   const store = getStore()
-  let result: 'ok' | 'not_found' | 'invalid_token' | 'not_pending' = 'not_found'
+  let result: 'ok' | 'not_found' | 'invalid_token' | 'already_terminal' = 'not_found'
   let declinedRequest: Awaited<ReturnType<typeof store.read>>['requests'][number] | undefined
 
   const now = new Date().toISOString()
@@ -56,7 +57,13 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     const req = s.requests.find(r => r.id === requestId)
     if (!req) { result = 'not_found'; return }
     if (req.callbackToken !== token) { result = 'invalid_token'; return }
-    if (req.approval?.decision !== 'pending') { result = 'not_pending'; return }
+    if (isTerminal(req.status)) { result = 'already_terminal'; return }
+
+    // If no approval object yet, create one now
+    if (!req.approval) {
+      req.approval = { approverId: declinedBy.id, decision: 'pending' }
+    }
+    if (req.approval.decision !== 'pending') { result = 'already_terminal'; return }
 
     req.approval.decision  = 'declined'
     req.approval.decidedAt = now
@@ -74,15 +81,9 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     declinedRequest = req
   })
 
-  if (result === 'not_found') {
-    return NextResponse.json({ error: 'request not found' }, { status: 404 })
-  }
-  if (result === 'invalid_token') {
-    return NextResponse.json({ error: 'invalid token' }, { status: 401 })
-  }
-  if (result === 'not_pending') {
-    return NextResponse.json({ error: 'request is not awaiting approval' }, { status: 409 })
-  }
+  if (result === 'not_found')        return NextResponse.json({ error: 'request not found' }, { status: 404 })
+  if (result === 'invalid_token')    return NextResponse.json({ error: 'invalid token' }, { status: 401 })
+  if (result === 'already_terminal') return NextResponse.json({ error: 'request already decided' }, { status: 409 })
 
   if (declinedRequest) {
     notifyDecision(declinedRequest, declinedBy).catch(() => {})
