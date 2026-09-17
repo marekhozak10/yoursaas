@@ -26,7 +26,7 @@ export async function approveRequest(requestId: string): Promise<void> {
       at:      now,
       type:    'local.approved',
       actor:   user.id,
-      summary: copy.timeline.summaries['local.approved'],
+      summary: `${user.name} schválila`,
     })
     req.updatedAt = now
   })
@@ -61,7 +61,7 @@ export async function declineRequest(requestId: string, comment: string): Promis
       at:      now,
       type:    'local.declined',
       actor:   user.id,
-      summary: copy.timeline.summaries['local.declined'],
+      summary: `${user.name} zamítla`,
     })
     req.updatedAt = now
   })

@@ -71,7 +71,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
       at:      now,
       type:    'local.approved',
       actor:   approvedBy.id,
-      summary: copy.timeline.summaries['local.approved'],
+      summary: `${approvedBy.name} schválil/a`,
     })
     req.updatedAt = now
     result = 'ok'

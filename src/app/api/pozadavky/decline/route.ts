@@ -75,7 +75,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
       at:      now,
       type:    'local.declined',
       actor:   declinedBy.id,
-      summary: copy.timeline.summaries['local.declined'],
+      summary: `${declinedBy.name} zamítl/a`,
     })
     req.updatedAt = now
     result = 'ok'
