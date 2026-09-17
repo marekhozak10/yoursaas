@@ -65,9 +65,10 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     }
     if (req.approval.decision !== 'pending') { result = 'already_terminal'; return }
 
-    req.approval.decision  = 'declined'
-    req.approval.decidedAt = now
-    req.approval.comment   = comment.trim()
+    req.approval.decision      = 'declined'
+    req.approval.decidedAt     = now
+    req.approval.decidedByName = declinedBy.name
+    req.approval.comment       = comment.trim()
     req.status = 'declined'
     req.events.push({
       id:      nanoid(),

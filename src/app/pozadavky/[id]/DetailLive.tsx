@@ -237,7 +237,10 @@ export function DetailLive({ initialRequest, user, users, teams }: Props) {
                   <div className="flex items-center gap-2">
                     <span className="size-2 rounded-full bg-ok flex-none" />
                     <span className="text-[12.5px] text-ink">
-                      {copy.approvalCard.decidedApproved(formatPragueTime(request.approval.decidedAt))}
+                      {copy.approvalCard.decidedApproved(
+                        request.approval.decidedByName ?? 'Petra Málková',
+                        formatPragueTime(request.approval.decidedAt)
+                      )}
                     </span>
                   </div>
                 </Card>
@@ -249,7 +252,10 @@ export function DetailLive({ initialRequest, user, users, teams }: Props) {
                   <div className="flex items-center gap-2">
                     <span className="size-2 rounded-full bg-danger flex-none" />
                     <span className="text-[12.5px] text-ink">
-                      {copy.approvalCard.decidedDeclined(formatPragueTime(request.approval.decidedAt))}
+                      {copy.approvalCard.decidedDeclined(
+                        request.approval.decidedByName ?? 'Petra Málková',
+                        formatPragueTime(request.approval.decidedAt)
+                      )}
                     </span>
                   </div>
                   {request.approval.comment && (

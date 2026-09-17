@@ -57,6 +57,7 @@ export type Approval = {
   approverId: string            // always 'u_petra'
   decision: 'pending' | 'approved' | 'declined'
   decidedAt?: string
+  decidedByName?: string        // display name of whoever approved/declined
   comment?: string | null       // required when declined
 }
 

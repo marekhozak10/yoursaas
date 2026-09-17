@@ -17,8 +17,9 @@ export async function approveRequest(requestId: string): Promise<void> {
   await getStore().mutate(s => {
     const req = s.requests.find(r => r.id === requestId)
     if (!req || !req.approval || req.approval.decision !== 'pending') return
-    req.approval.decision  = 'approved'
-    req.approval.decidedAt = now
+    req.approval.decision      = 'approved'
+    req.approval.decidedAt     = now
+    req.approval.decidedByName = user.name
     req.status = 'approved'
     req.events.push({
       id:      nanoid(),
@@ -50,9 +51,10 @@ export async function declineRequest(requestId: string, comment: string): Promis
   await getStore().mutate(s => {
     const req = s.requests.find(r => r.id === requestId)
     if (!req || !req.approval || req.approval.decision !== 'pending') return
-    req.approval.decision  = 'declined'
-    req.approval.decidedAt = now
-    req.approval.comment   = comment
+    req.approval.decision      = 'declined'
+    req.approval.decidedAt     = now
+    req.approval.decidedByName = user.name
+    req.approval.comment       = comment
     req.status = 'declined'
     req.events.push({
       id:      nanoid(),

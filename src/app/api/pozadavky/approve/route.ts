@@ -62,8 +62,9 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     // If already decided, treat as terminal
     if (req.approval.decision !== 'pending') { result = 'already_terminal'; return }
 
-    req.approval.decision  = 'approved'
-    req.approval.decidedAt = now
+    req.approval.decision      = 'approved'
+    req.approval.decidedAt     = now
+    req.approval.decidedByName = approvedBy.name
     req.status = 'approved'
     req.events.push({
       id:      nanoid(),

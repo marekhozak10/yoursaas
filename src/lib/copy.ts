@@ -157,8 +157,8 @@ export const copy = {
     approveButton:  'Schválit',
     declineButton:  'Zamítnout',
     waitingFooter:  'Čeká na Petru Málkovou, HR partnerku.',
-    decidedApproved: (time: string) => `Schválila Petra Málková v ${time}.`,
-    decidedDeclined: (time: string) => `Zamítla Petra Málková v ${time}.`,
+    decidedApproved: (name: string, time: string) => `Schválil/a ${name} v ${time}.`,
+    decidedDeclined: (name: string, time: string) => `Zamítl/a ${name} v ${time}.`,
     declineDialog: {
       title:   'Proč to zamítáte?',
       helper:  'Jednou větou. Vrátí se to žadateli.',
