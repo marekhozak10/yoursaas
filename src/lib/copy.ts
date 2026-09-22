@@ -13,11 +13,20 @@ export type { SystemKey }
 export const copy = {
   /* ── Shell ──────────────────────────────────────────────────────────── */
   shell: {
-    appName: 'Peoplebase',
+    appName: 'Your SaaS',
     sections: {
-      pozadavky: 'Požadavky',
-      keSchvaleni: 'Ke schválení',
+      zamestnanci:  'Zaměstnanci',
+      organizace:   'Organizace',
+      nabor:        'Nábor',
+      vykon:        'Výkon',
+      odmenovani:   'Odměňování',
+      vzdelavani:   'Vzdělávání',
+      reporting:    'Reporting',
+      pozadavky:    'Požadavky',
+      keSchvaleni:  'Ke schválení',
     },
+    placeholderHeading: 'Tato sekce není součástí ukázky',
+    placeholderBody: 'V produkční verzi by zde bylo plné rozhraní.',
     tenant: 'Alpina Hotels Group',
     switcherHeading: 'Přihlášen jako',
     scriptedBadge: 'nanečisto',
@@ -191,5 +200,12 @@ export const copy = {
   approvalsPage: {
     title: 'Ke schválení',
     empty: 'Nic na vás nečeká.',
+  },
+
+  /* ── Appmixer embed highlight ───────────────────────────────────────── */
+  appmixerHighlight: {
+    badge:       'Powered by Appmixer',
+    toggleShow:  'Zobrazit embed',
+    toggleHide:  'Skrýt embed',
   },
 } as const

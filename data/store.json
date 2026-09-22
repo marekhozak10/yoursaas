@@ -2,12 +2,12 @@
   "users": [
     {
       "id": "u_jana",
-      "name": "Jana Dvořáková",
-      "nameGenitive": "Jany Dvořákové",
-      "initials": "JD",
-      "title": "ředitelka provozu, střední Evropa",
-      "titleGenitive": "ředitelky provozu, střední Evropa",
-      "email": "jana.dvorakova@alpinahotels.example",
+      "name": "Matouš Vrba",
+      "nameGenitive": "Matouše Vrby",
+      "initials": "MV",
+      "title": "ředitel provozu, střední Evropa",
+      "titleGenitive": "ředitele provozu, střední Evropa",
+      "email": "matous.vrba@alpinahotels.example",
       "role": "manager"
     },
     {
@@ -563,144 +563,6 @@
         }
       ],
       "callbackToken": "seed_token_r_013"
-    },
-    {
-      "id": "p9b8XsBgeI8XIudgbcqY1",
-      "publicId": "POZ-2026-014",
-      "requesterId": "u_petra",
-      "teamId": "t_revmgmt",
-      "title": "Revenue manager",
-      "seniority": "senior",
-      "location": "Praha, hybridně",
-      "targetStartDate": "2026-11-01",
-      "justification": "V březnu nám odešel revenue lead ve Vídni a regionální tým od té doby pokrývá dva trhy. Teď potřebujeme nového manažera.",
-      "status": "open",
-      "createdAt": "2026-09-11T13:27:54.433Z",
-      "updatedAt": "2026-09-11T13:28:42.699Z",
-      "draft": {
-        "jobAd": "**Revenue manager, střední Evropa**\nPraha, hybridně. Plný úvazek. Nástup 1. listopadu 2026.\n\nBudete nastavovat ceny pro jedenáct hotelů Alpina v Praze, Vídni a Bratislavě a\nbudete vlastnit číslo, které se každé pondělí objeví na poradě. Regionální tým od\nbřezna pokrývá dva trhy, takže první, co narovnáte, je čtvrté kvartále. Pak přijdou\nskupinové sazby na rok 2027.\n\nSedne vám to, pokud jste už řídili revenue pro skupinu hotelů, s forecastem se hádáte\nmísto toho, abyste ho přijali, a baví vás být ten, kdo vysvětlí, proč se sazba\npohnula. Budete sedět vedle obchodního ředitele a tří ředitelů hotelů a budete u\ntoho, když se staví rozpočet. Ne až potom, co ho dostanete.\n\n**Jak vypadá prvního půl roku**\nPrvní měsíc převezmete cenový kalendář na čtvrté kvartále a dva trhy, které zatím\npokrývá regionální tým. Ve třetím měsíci přebíráte nastavení RMS a hlídání rate\nparity. V šestém vedete vyjednávání skupinových sazeb na rok 2027 s obchodním\nředitelem.\n\n**Co nabízíme**\nPásmo 4, revize jednou za dvanáct měsíců. Hybridně, dva dny v týdnu v pražské\nkanceláři. Pětadvacet dní dovolené, rozpočet na cesty po hotelech a zaměstnanecká\nsazba v kterémkoli hotelu Alpina pro vás a pro toho, s kým pojedete.\n\nPřihlaste se a připište pár vět o cenovém rozhodnutí, které byste dnes obhájili.",
-        "screeningCriteria": [
-          "Revenue pro víc hotelů",
-          "Správa RMS, ne jen reporting",
-          "Skupinové sazby",
-          "Trh CZ nebo AT",
-          "Angličtina a němčina"
-        ],
-        "annualCostMinor": 186000000,
-        "currency": "CZK",
-        "seniorityDetected": "senior",
-        "inBand": true,
-        "band": "Pásmo 4"
-      },
-      "approval": {
-        "approverId": "u_petra",
-        "decision": "approved",
-        "decidedAt": "2026-09-11T13:28:37.576Z"
-      },
-      "systems": [
-        {
-          "key": "ats",
-          "status": "created",
-          "ref": "ATS-2026-00847",
-          "updatedAt": "2026-09-11T13:28:39.279Z"
-        },
-        {
-          "key": "job_board",
-          "status": "created",
-          "ref": "JB-2026-00312",
-          "updatedAt": "2026-09-11T13:28:40.483Z"
-        },
-        {
-          "key": "slack",
-          "status": "created",
-          "ref": "#revenue-eu-hiring",
-          "updatedAt": "2026-09-11T13:28:41.188Z"
-        },
-        {
-          "key": "drive",
-          "status": "created",
-          "ref": "Drive/Revenue-manager-POZ-2026-014",
-          "updatedAt": "2026-09-11T13:28:42.093Z"
-        }
-      ],
-      "events": [
-        {
-          "id": "_zlnb-hxDV_SQWT0n72zJ",
-          "at": "2026-09-11T13:27:54.433Z",
-          "type": "local.submitted",
-          "actor": "u_petra",
-          "summary": "Požadavek odeslán"
-        },
-        {
-          "id": "sbwBM8y_E2XG44YEVztKZ",
-          "at": "2026-09-11T13:27:55.084Z",
-          "type": "flow.started",
-          "actor": "workflow",
-          "summary": "Workflow převzalo požadavek"
-        },
-        {
-          "id": "rJjKg6Gv9u9-J3U01aTSy",
-          "at": "2026-09-11T13:27:56.588Z",
-          "type": "context.loaded",
-          "actor": "workflow",
-          "summary": "Načteno mzdové pásmo a poslední inzeráty týmu"
-        },
-        {
-          "id": "EG9jbCFoEaOPuqBiKU5nl",
-          "at": "2026-09-11T13:28:00.890Z",
-          "type": "draft.ready",
-          "actor": "agent",
-          "summary": "Inzerát napsaný, pět kritérií, spočítaný náklad"
-        },
-        {
-          "id": "2i7Xos0dTJ4ONEHZ2RzAW",
-          "at": "2026-09-11T13:28:37.576Z",
-          "type": "local.approved",
-          "actor": "u_petra",
-          "summary": "Petra Málková schválila"
-        },
-        {
-          "id": "5cCd1lX0q1gMo9Sg6r5Yt",
-          "at": "2026-09-11T13:28:39.279Z",
-          "type": "system.updated",
-          "actor": "system",
-          "summary": "Pozice založená v ATS"
-        },
-        {
-          "id": "lGSmhvo_SQJC-UHHCng_0",
-          "at": "2026-09-11T13:28:40.483Z",
-          "type": "system.updated",
-          "actor": "system",
-          "summary": "Inzerát zveřejněný na job boardu"
-        },
-        {
-          "id": "vcvG3y215TJAd4OAARDai",
-          "at": "2026-09-11T13:28:41.188Z",
-          "type": "system.updated",
-          "actor": "system",
-          "summary": "Náborový kanál založený, panel pozvaný"
-        },
-        {
-          "id": "_ZUNqqVYd2stpnS5x39M2",
-          "at": "2026-09-11T13:28:42.093Z",
-          "type": "system.updated",
-          "actor": "system",
-          "summary": "Složka se scorecardy vytvořená ze šablony"
-        },
-        {
-          "id": "lJXnjlJrL4kUGPkniGIHg",
-          "at": "2026-09-11T13:28:42.699Z",
-          "type": "flow.completed",
-          "actor": "workflow",
-          "summary": "Pozice je otevřená"
-        }
-      ],
-      "callbackToken": "sFQ8JSmgjEiywnS4t5sU_-ZhGrVsvYsn",
-      "context": {
-        "band": "Pásmo 4",
-        "medianTimeToFillDays": 47,
-        "lastAdWrittenAt": "2026-04-18"
-      }
     }
   ]
 }

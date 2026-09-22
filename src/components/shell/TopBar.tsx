@@ -75,7 +75,7 @@ interface TopBarProps {
 
 export function TopBar({ pendingApprovals = 0, currentUser, scripted }: TopBarProps) {
   const pathname = usePathname()
-  const isRequests = pathname === "/" || pathname.startsWith("/pozadavky")
+  const isRequests  = pathname.startsWith("/pozadavky")
   const isApprovals = pathname.startsWith("/ke-schvaleni")
 
   const user = currentUser ?? { name: "Matouš Vrba", initials: "MV" }
@@ -86,7 +86,7 @@ export function TopBar({ pendingApprovals = 0, currentUser, scripted }: TopBarPr
       style={{ height: 56 }}
     >
       {/* ── Brand ─────────────────────────────────────────────── */}
-      <Link href="/pozadavky" className="flex items-center gap-2.5 shrink-0">
+      <Link href="/" className="flex items-center gap-2.5 shrink-0">
         <Mark />
         <span className="text-[13.5px] font-bold tracking-[-0.02em] text-ink">
           {copy.shell.appName}
@@ -98,17 +98,43 @@ export function TopBar({ pendingApprovals = 0, currentUser, scripted }: TopBarPr
 
       {/* ── Section nav ───────────────────────────────────────── */}
       <nav className="flex items-center gap-4">
-        <NavLink href="/pozadavky" active={isRequests}>
-          {copy.shell.sections.pozadavky}
+        <NavLink href="/zamestnanci" active={pathname.startsWith("/zamestnanci")}>
+          {copy.shell.sections.zamestnanci}
         </NavLink>
-        <NavLink
-          href="/ke-schvaleni"
-          active={isApprovals}
-          badge={pendingApprovals}
-        >
-          {copy.shell.sections.keSchvaleni}
+        <NavLink href="/organizace" active={pathname.startsWith("/organizace")}>
+          {copy.shell.sections.organizace}
+        </NavLink>
+        <NavLink href="/pozadavky" active={isRequests || isApprovals}>
+          {copy.shell.sections.nabor}
+        </NavLink>
+        <NavLink href="/vykon" active={pathname.startsWith("/vykon")}>
+          {copy.shell.sections.vykon}
+        </NavLink>
+        <NavLink href="/odmenovani" active={pathname.startsWith("/odmenovani")}>
+          {copy.shell.sections.odmenovani}
+        </NavLink>
+        <NavLink href="/vzdelavani" active={pathname.startsWith("/vzdelavani")}>
+          {copy.shell.sections.vzdelavani}
+        </NavLink>
+        <NavLink href="/reporting" active={pathname.startsWith("/reporting")}>
+          {copy.shell.sections.reporting}
         </NavLink>
       </nav>
+
+      {/* ── Nábor sub-nav (Požadavky + Ke schválení) ──────────── */}
+      {(isRequests || isApprovals) && (
+        <>
+          <span className="h-4 w-px bg-hairline shrink-0" />
+          <nav className="flex items-center gap-3">
+            <NavLink href="/pozadavky" active={isRequests}>
+              {copy.shell.sections.pozadavky}
+            </NavLink>
+            <NavLink href="/ke-schvaleni" active={isApprovals} badge={pendingApprovals}>
+              {copy.shell.sections.keSchvaleni}
+            </NavLink>
+          </nav>
+        </>
+      )}
 
       {/* ── Spacer ────────────────────────────────────────────── */}
       <span className="flex-1" />

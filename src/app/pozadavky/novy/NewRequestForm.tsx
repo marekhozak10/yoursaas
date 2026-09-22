@@ -35,8 +35,8 @@ export function NewRequestForm({ teams, defaultDate }: Props) {
   const errors = state.errors ?? {}
 
   return (
-    <div className="min-h-[calc(100vh-56px)] bg-canvas">
-      <main className="mx-auto max-w-[560px] px-8 py-[26px]">
+    <main className="appmixer-embed-area mx-auto max-w-[560px] px-8 py-16">
+      <div>
 
         <Eyebrow>{copy.form.eyebrow}</Eyebrow>
 
@@ -194,8 +194,15 @@ export function NewRequestForm({ teams, defaultDate }: Props) {
           {copy.form.footer}
         </div>
 
-      </main>
-    </div>
+      </div>
+
+      {/* Appmixer badge — shown via CSS when html.appmixer-highlight is set */}
+      <div className="appmixer-embed-badge">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/appmixer-logo.png" alt="Appmixer" width={16} height={16} style={{ flexShrink: 0, objectFit: 'contain' }} />
+        <span className="appmixer-embed-badge-text">{copy.appmixerHighlight.badge}</span>
+      </div>
+    </main>
   )
 }
 

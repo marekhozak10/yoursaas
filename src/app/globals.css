@@ -116,6 +116,60 @@
   --radius-xl:  calc(var(--radius) * 1.4);
 }
 
+/* ─── Appmixer embed highlight (pure CSS, no JS) ─────────────────────────── */
+.appmixer-embed-area {
+  position: relative;
+}
+
+/* Toggle button base */
+.embed-toggle-btn {
+  background: white;
+  border: 1px solid #e3e0d9;
+  color: #6f6b62;
+}
+
+/* Badge and icon variants — hidden by default */
+.appmixer-embed-badge {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  right: 20px;
+  transform: translateY(50%);
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  border: 1.5px solid #e53e3e;
+  border-radius: 9999px;
+  padding: 5px 12px;
+  box-shadow: 0 6px 16px rgb(27 26 23 / 0.10);
+}
+.appmixer-embed-badge-text {
+  font-size: 11px;
+  font-weight: 600;
+  color: #e53e3e;
+  white-space: nowrap;
+}
+.embed-icon-active  { display: none; }
+.embed-hide-text    { display: none; }
+
+/* ── When checkbox is checked ──────────────────────────────────────────── */
+#embed-root:has(#embed-toggle:checked) .appmixer-embed-area {
+  border: 2px dashed #e53e3e;
+  border-radius: 12px;
+}
+#embed-root:has(#embed-toggle:checked) .appmixer-embed-badge {
+  display: flex;
+}
+#embed-root:has(#embed-toggle:checked) .embed-toggle-btn {
+  background: #e53e3e;
+  border-color: #e53e3e;
+  color: white;
+}
+#embed-root:has(#embed-toggle:checked) .embed-show-text { display: none; }
+#embed-root:has(#embed-toggle:checked) .embed-hide-text { display: inline; }
+#embed-root:has(#embed-toggle:checked) .embed-icon-inactive { display: none; }
+#embed-root:has(#embed-toggle:checked) .embed-icon-active  { display: block; }
+
 @keyframes fadeRise {
   from { opacity: 0; transform: translateY(6px); }
   to   { opacity: 1; transform: translateY(0);   }
