@@ -109,9 +109,9 @@ export const StoreSchema = z.object({
 export const RoleRequestFormInputSchema = z.object({
   teamId:          z.string().min(1),
   title:           z.string().min(1),
-  seniority:       SenioritySchema,
+  seniority:       SenioritySchema.default('senior'),
   targetStartDate: z.string().min(1),
-  location:        z.string().min(1),
+  location:        z.string().default(''),
   justification:   z.string().min(40),
 })
 
