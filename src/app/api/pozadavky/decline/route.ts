@@ -25,13 +25,19 @@ import { isTerminal } from '@/lib/types'
  *   404 request not found
  *   409 request not in awaiting_approval state
  */
-export async function POST(req: NextRequest): Promise<NextResponse> {
-  let body: Record<string, unknown>
+async function parseBody(req: NextRequest): Promise<Record<string, unknown> | null> {
   try {
-    body = await req.json() as Record<string, unknown>
+    let parsed = await req.json()
+    if (typeof parsed === 'string') parsed = JSON.parse(parsed)
+    return parsed as Record<string, unknown>
   } catch {
-    return NextResponse.json({ error: 'invalid json' }, { status: 400 })
+    return null
   }
+}
+
+export async function POST(req: NextRequest): Promise<NextResponse> {
+  const body = await parseBody(req)
+  if (!body) return NextResponse.json({ error: 'invalid json' }, { status: 400 })
 
   const requestId  = body.requestId  as string | undefined
   const declinedBy = body.declinedBy as { id: string; name: string } | undefined
