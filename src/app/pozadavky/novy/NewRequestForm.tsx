@@ -108,20 +108,6 @@ export function NewRequestForm({ teams, defaultDate }: Props) {
             {errors.targetStartDate && <FieldError>{errors.targetStartDate}</FieldError>}
           </div>
 
-          {/* Lokalita */}
-          <div>
-            <FieldLabel htmlFor="location">{copy.form.labels.location}</FieldLabel>
-            <div className="mt-1.5">
-              <input
-                id="location"
-                name="location"
-                type="text"
-                defaultValue="Praha, hybridně"
-                className={INPUT_CLS}
-              />
-            </div>
-            {errors.location && <FieldError>{errors.location}</FieldError>}
-          </div>
 
           {/* Zdůvodnění */}
           <div>
