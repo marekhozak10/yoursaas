@@ -22,10 +22,15 @@ import { revalidatePath } from 'next/cache'
  *   401 invalid token
  *   404 request not found
  */
+function relaxedParse(s: string): unknown {
+  return JSON.parse(s.replace(/,\s*([\]}])/g, '$1'))
+}
+
 async function parseBody(req: NextRequest): Promise<Record<string, unknown> | null> {
   try {
-    let parsed = await req.json()
-    if (typeof parsed === 'string') parsed = JSON.parse(parsed)
+    const text = await req.text()
+    let parsed = relaxedParse(text)
+    if (typeof parsed === 'string') parsed = relaxedParse(parsed)
     return parsed as Record<string, unknown>
   } catch {
     return null

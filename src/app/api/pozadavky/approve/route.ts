@@ -22,11 +22,17 @@ import { isTerminal } from '@/lib/types'
  *   404 request not found
  *   409 request already in a terminal state (open/declined/failed)
  */
+function relaxedParse(s: string): unknown {
+  // Strip trailing commas before ] or } to fix common Appmixer templating artifacts
+  return JSON.parse(s.replace(/,\s*([\]}])/g, '$1'))
+}
+
 async function parseBody(req: NextRequest): Promise<Record<string, unknown> | null> {
   try {
-    let parsed = await req.json()
-    // Handle double-encoded JSON (Appmixer sends body as a JSON string)
-    if (typeof parsed === 'string') parsed = JSON.parse(parsed)
+    const text = await req.text()
+    let parsed = relaxedParse(text)
+    // Handle double-encoded JSON (Appmixer wraps body in extra quotes)
+    if (typeof parsed === 'string') parsed = relaxedParse(parsed)
     return parsed as Record<string, unknown>
   } catch {
     return null
