@@ -23,19 +23,19 @@
   ],
   "teams": [
     {
-      "id": "t_revmgmt",
-      "name": "Revenue management, střední Evropa",
-      "costCenter": "CE-RM-01"
+      "id": "t_berlin",
+      "name": "Berlín",
+      "costCenter": "DE-BE-01"
     },
     {
-      "id": "t_recepce",
-      "name": "Recepce, Praha",
-      "costCenter": "CE-FO-04"
+      "id": "t_vienna",
+      "name": "Vídeň",
+      "costCenter": "AT-VI-01"
     },
     {
-      "id": "t_fnb",
-      "name": "Gastro, Vídeň",
-      "costCenter": "AT-FB-02"
+      "id": "t_prague",
+      "name": "Praha",
+      "costCenter": "CZ-PR-01"
     }
   ],
   "bands": [

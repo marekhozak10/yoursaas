@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "reset": "node --experimental-strip-types --experimental-detect-module scripts/reset.ts",
+    "reset": "STORE_DRIVER=redis UPSTASH_REDIS_REST_URL=https://chief-mallard-290190.upstash.io UPSTASH_REDIS_REST_TOKEN=gQAAAAAABG2OAAIgcDJlNTYyY2QyNTk0NmM0MmI3YTNmN2Y0OTM4YWJmYzI0OQ node --experimental-strip-types --experimental-detect-module scripts/reset.ts",
     "test": "node --import ./scripts/loader.mjs --experimental-strip-types scripts/smoke.ts"
   },
   "dependencies": {

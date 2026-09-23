@@ -27,7 +27,7 @@ export default function OrganizacePage() {
       {/* Page title */}
       <div className="mb-8">
         <h1 className="text-[23px] font-bold tracking-[-0.025em] text-ink">Organizace</h1>
-        <p className="text-[12.5px] text-muted mt-1">Alpina Hotels Group — 247 zaměstnanců ve 4 lokalitách</p>
+        <p className="text-[12.5px] text-muted mt-1">Alpina Hotels Group — 923 zaměstnanců ve 4 lokalitách</p>
       </div>
 
       {/* CEO card */}

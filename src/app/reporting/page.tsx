@@ -45,7 +45,7 @@ export default function ReportingPage() {
       <div className="grid grid-cols-4 gap-4 mb-8">
         <div className="bg-surface rounded-panel border border-line shadow-card p-5">
           <div className="text-[11px] font-semibold text-faint uppercase tracking-[.06em] mb-1">Headcount</div>
-          <div className="text-[22px] font-bold tracking-[-0.02em] text-ink">247</div>
+          <div className="text-[22px] font-bold tracking-[-0.02em] text-ink">923</div>
           <div className="text-[11px] text-muted mt-0.5">+3 YTD</div>
         </div>
         <div className="bg-surface rounded-panel border border-line shadow-card p-5">

@@ -84,7 +84,7 @@ export default function VzdelavaniPage() {
           <span className="text-[12.5px] text-agent">·</span>
           <span className="text-[12.5px] text-agent">termín 31. 10. 2026</span>
           <span className="text-[12.5px] text-agent">·</span>
-          <span className="text-[12.5px] text-agent">dokončeno 189/247 (77 %)</span>
+          <span className="text-[12.5px] text-agent">dokončeno 189/923 (77 %)</span>
         </div>
         <div className="h-2 bg-well rounded-full overflow-hidden">
           <div className="h-full bg-agent rounded-full" style={{ width: "77%" }} />

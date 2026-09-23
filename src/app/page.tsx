@@ -48,7 +48,7 @@ export default async function DashboardPage() {
       <div className="grid grid-cols-4 gap-4 mb-8">
         <div className="bg-surface rounded-panel border border-line shadow-card p-5">
           <div className="text-[11px] font-semibold text-faint uppercase tracking-[.06em] mb-1">Zaměstnanci</div>
-          <div className="text-[22px] font-bold tracking-[-0.02em] text-ink">247</div>
+          <div className="text-[22px] font-bold tracking-[-0.02em] text-ink">923</div>
           <div className="text-[11px] text-muted mt-0.5">ve 4 lokalitách</div>
         </div>
         <div className="bg-surface rounded-panel border border-line shadow-card p-5">
@@ -144,7 +144,7 @@ export default async function DashboardPage() {
             <div className="h-1.5 bg-well rounded-full overflow-hidden mb-1.5">
               <div className="h-full bg-agent rounded-full" style={{ width: '77%' }} />
             </div>
-            <div className="text-[11px] text-agent">189/247 dokončeno · termín 31. 10. 2026</div>
+            <div className="text-[11px] text-agent">189/923 dokončeno · termín 31. 10. 2026</div>
           </div>
 
         </div>

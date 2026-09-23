@@ -26,7 +26,7 @@ export default function ZamestnancipPage() {
       {/* Stats row */}
       <div className="grid grid-cols-4 gap-4 mb-6">
         {[
-          { label: "Celkem zaměstnanců", value: "247" },
+          { label: "Celkem zaměstnanců", value: "923" },
           { label: "Nástupy tento měsíc", value: "8" },
           { label: "Oddělení", value: "7" },
           { label: "Fluktuace TTM", value: "11,4 %" },
@@ -84,7 +84,7 @@ export default function ZamestnancipPage() {
             ))}
             <tr>
               <td colSpan={6} className="px-4 py-3 text-[11px] text-muted text-center">
-                Zobrazeno 16 z 247 zaměstnanců
+                Zobrazeno 16 z 923 zaměstnanců
               </td>
             </tr>
           </tbody>

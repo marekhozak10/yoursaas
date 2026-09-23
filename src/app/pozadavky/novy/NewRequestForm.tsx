@@ -87,56 +87,25 @@ export function NewRequestForm({ teams, defaultDate }: Props) {
             {errors.title && <FieldError>{errors.title}</FieldError>}
           </div>
 
-          {/* Seniorita + Nástup od */}
-          <div className="grid grid-cols-2 gap-[15px]">
-
-            {/* Seniorita */}
-            <div>
-              <FieldLabel>{copy.form.labels.seniority}</FieldLabel>
-              <div className="mt-1.5 flex border border-input-border rounded-lg overflow-hidden">
-                {SENIORITIES.map((s, i) => (
-                  <label key={s.value} className="flex-1 cursor-pointer">
-                    <input
-                      type="radio"
-                      name="seniority"
-                      value={s.value}
-                      defaultChecked={s.value === 'senior'}
-                      className="sr-only peer"
-                    />
-                    <span className={cn(
-                      'block w-full text-center text-[11.5px] py-[10px] transition-colors',
-                      'text-muted peer-checked:bg-brand peer-checked:text-white peer-checked:font-semibold',
-                      i > 0 && 'border-l border-hairline',
-                    )}>
-                      {s.label}
-                    </span>
-                  </label>
-                ))}
-              </div>
-              {errors.seniority && <FieldError>{errors.seniority}</FieldError>}
+          {/* Nástup od */}
+          <div>
+            <FieldLabel htmlFor="targetStartDate">{copy.form.labels.startDate}</FieldLabel>
+            <div className="mt-1.5 relative">
+              <input
+                id="targetStartDate"
+                name="targetStartDate"
+                type="date"
+                defaultValue={defaultDate}
+                className={cn(INPUT_CLS, 'pr-9')}
+              />
+              <span className="pointer-events-none absolute right-[13px] top-1/2 -translate-y-1/2">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#969187" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="3.5" y="5" width="17" height="15" rx="2"/>
+                  <path d="M3.5 10h17M8 3v4M16 3v4"/>
+                </svg>
+              </span>
             </div>
-
-            {/* Nástup od */}
-            <div>
-              <FieldLabel htmlFor="targetStartDate">{copy.form.labels.startDate}</FieldLabel>
-              <div className="mt-1.5 relative">
-                <input
-                  id="targetStartDate"
-                  name="targetStartDate"
-                  type="date"
-                  defaultValue={defaultDate}
-                  className={cn(INPUT_CLS, 'pr-9')}
-                />
-                <span className="pointer-events-none absolute right-[13px] top-1/2 -translate-y-1/2">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#969187" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="3.5" y="5" width="17" height="15" rx="2"/>
-                    <path d="M3.5 10h17M8 3v4M16 3v4"/>
-                  </svg>
-                </span>
-              </div>
-              {errors.targetStartDate && <FieldError>{errors.targetStartDate}</FieldError>}
-            </div>
-
+            {errors.targetStartDate && <FieldError>{errors.targetStartDate}</FieldError>}
           </div>
 
           {/* Lokalita */}
