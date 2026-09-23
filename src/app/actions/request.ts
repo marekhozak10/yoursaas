@@ -28,9 +28,9 @@ export async function createRequest(
   const raw = {
     teamId:          formData.get('teamId')          as string,
     title:           formData.get('title')           as string,
-    seniority:       formData.get('seniority')       as string,
+    seniority:       (formData.get('seniority')      as string | null) ?? 'senior',
     targetStartDate: formData.get('targetStartDate') as string,
-    location:        formData.get('location')        as string,
+    location:        (formData.get('location')       as string | null) ?? '',
     justification:   formData.get('justification')   as string,
   }
 
