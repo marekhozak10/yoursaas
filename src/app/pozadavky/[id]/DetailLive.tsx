@@ -243,6 +243,32 @@ export function DetailLive({ initialRequest, user, users, teams }: Props) {
                       )}
                     </span>
                   </div>
+                  {(request.jobAdUrl || request.linkedInUrl) && (
+                    <div className="mt-3 pt-3 border-t border-hairline flex flex-col gap-2">
+                      {request.jobAdUrl && (
+                        <a
+                          href={request.jobAdUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-[12px] font-medium text-brand-ink hover:underline"
+                        >
+                          <GoogleDocIcon />
+                          {copy.detail.jobAdLink}
+                        </a>
+                      )}
+                      {request.linkedInUrl && (
+                        <a
+                          href={request.linkedInUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-[12px] font-medium text-[#0a66c2] hover:underline"
+                        >
+                          <LinkedInIcon />
+                          {copy.detail.linkedInLink}
+                        </a>
+                      )}
+                    </div>
+                  )}
                 </Card>
               )}
 
@@ -351,10 +377,62 @@ export function DetailLive({ initialRequest, user, users, teams }: Props) {
                 )
               })}
             </div>
+
+            {/* Links — shown below timeline when approved and URLs set */}
+            {request.approval?.decision === 'approved' && (request.jobAdUrl || request.linkedInUrl) && (
+              <div className="px-4 py-3 border-t border-hairline flex flex-col gap-2">
+                {request.jobAdUrl && (
+                  <a
+                    href={request.jobAdUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-[11.5px] font-medium text-brand-ink hover:underline"
+                  >
+                    <GoogleDocIcon />
+                    {copy.detail.jobAdLink}
+                  </a>
+                )}
+                {request.linkedInUrl && (
+                  <a
+                    href={request.linkedInUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-[11.5px] font-medium text-[#0a66c2] hover:underline"
+                  >
+                    <LinkedInIcon />
+                    {copy.detail.linkedInLink}
+                  </a>
+                )}
+              </div>
+            )}
           </div>
         </div>
 
       </div>
     </main>
+  )
+}
+
+function GoogleDocIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
+      <rect x="4" y="2" width="12" height="20" rx="2" fill="#4285f4" />
+      <path d="M14 2v5h5" fill="none" stroke="#fff" strokeWidth="1.5" strokeLinejoin="round" />
+      <rect x="4" y="2" width="16" height="20" rx="2" fill="none" stroke="#4285f4" strokeWidth="0" />
+      <path d="M16 2l4 5h-4V2z" fill="#aecbfa" />
+      <line x1="7" y1="12" x2="17" y2="12" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="7" y1="15" x2="17" y2="15" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="7" y1="18" x2="13" y2="18" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  )
+}
+
+function LinkedInIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
+      <rect width="24" height="24" rx="4" fill="#0a66c2" />
+      <path d="M7 9h2v9H7V9zm1-1.5a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5z" fill="#fff" />
+      <path d="M11 9h2v1.2c.5-.8 1.4-1.4 2.5-1.4 2 0 3 1.3 3 3.3V18h-2v-5.5c0-1-.4-1.8-1.5-1.8s-2 .8-2 2V18h-2V9z" fill="#fff" />
+    </svg>
   )
 }

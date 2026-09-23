@@ -105,6 +105,8 @@ export type RoleRequest = {
   events: TimelineEvent[]
   callbackToken: string
   flowRunId?: string
+  jobAdUrl?: string
+  linkedInUrl?: string
 }
 
 export type Store = {

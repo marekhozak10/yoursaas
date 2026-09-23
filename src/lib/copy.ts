@@ -129,6 +129,8 @@ export const copy = {
     costLabel:    'Roční náklad',
     costCaption:  'včetně odvodů',
     waitingState: 'Dokud někdo neklikne, nikde se nic nezveřejní ani nezaloží.',
+    jobAdLink:    'Náhled inzerátu',
+    linkedInLink: 'LinkedIn post',
   },
 
   /* ── Timeline summaries ─────────────────────────────────────────────── */

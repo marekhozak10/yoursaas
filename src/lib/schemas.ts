@@ -95,6 +95,8 @@ export const RoleRequestSchema = z.object({
   events:        z.array(TimelineEventSchema),
   callbackToken: z.string(),
   flowRunId:     z.string().optional(),
+  jobAdUrl:      z.string().optional(),
+  linkedInUrl:   z.string().optional(),
 })
 
 export const StoreSchema = z.object({
