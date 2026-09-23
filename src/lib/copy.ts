@@ -13,7 +13,7 @@ export type { SystemKey }
 export const copy = {
   /* ── Shell ──────────────────────────────────────────────────────────── */
   shell: {
-    appName: 'Your SaaS',
+    appName: 'Peoplebase',
     sections: {
       zamestnanci:  'Zaměstnanci',
       organizace:   'Organizace',

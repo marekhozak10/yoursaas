@@ -16,8 +16,8 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Your SaaS",
-  description: "HR platforma Your SaaS",
+  title: "Peoplebase",
+  description: "HR platforma Peoplebase",
 };
 
 export default async function RootLayout({
