@@ -44,11 +44,17 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
   if (!body) return NextResponse.json({ error: 'invalid json' }, { status: 400 })
 
   const requestId  = body.requestId  as string | undefined
-  const approvedBy = body.approvedBy as { id: string; name: string } | undefined
+  const rawBy      = body.approvedBy as { id?: string; name?: string } | undefined
+  const approvedBy = {
+    id:   rawBy?.id   ?? 'appmixer',
+    name: rawBy?.name ?? 'Appmixer',
+  }
+  const jobAdUrl    = body.jobAdUrl    as string | undefined
+  const linkedInUrl = body.linkedInUrl as string | undefined
 
-  if (!requestId || !approvedBy?.id || !approvedBy?.name) {
+  if (!requestId) {
     return NextResponse.json(
-      { error: 'missing required fields: requestId, approvedBy.id, approvedBy.name' },
+      { error: 'missing required field: requestId' },
       { status: 400 },
     )
   }
@@ -79,6 +85,8 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     req.approval.decidedAt     = now
     req.approval.decidedByName = approvedBy.name
     req.status = 'approved'
+    if (jobAdUrl)    req.jobAdUrl    = jobAdUrl
+    if (linkedInUrl) req.linkedInUrl = linkedInUrl
     req.events.push({
       id:      nanoid(),
       at:      now,
