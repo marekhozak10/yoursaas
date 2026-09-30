@@ -416,13 +416,10 @@ export function DetailLive({ initialRequest, user, users, teams }: Props) {
 function GoogleDocIcon() {
   return (
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
-      <rect x="4" y="2" width="12" height="20" rx="2" fill="#4285f4" />
-      <path d="M14 2v5h5" fill="none" stroke="#fff" strokeWidth="1.5" strokeLinejoin="round" />
-      <rect x="4" y="2" width="16" height="20" rx="2" fill="none" stroke="#4285f4" strokeWidth="0" />
-      <path d="M16 2l4 5h-4V2z" fill="#aecbfa" />
-      <line x1="7" y1="12" x2="17" y2="12" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" />
-      <line x1="7" y1="15" x2="17" y2="15" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" />
-      <line x1="7" y1="18" x2="13" y2="18" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" />
+      <rect width="24" height="24" rx="4" fill="#fff" stroke="#e5e5e5" strokeWidth="1" />
+      <path d="M5 5.5C5 4.7 5.7 4 6.5 4h7.8l4.7 4.7V18.5c0 .8-.7 1.5-1.5 1.5h-11C5.7 20 5 19.3 5 18.5V5.5z" fill="#fff" />
+      <path d="M14 4v5h5" fill="none" stroke="#e5e5e5" strokeWidth="1" />
+      <path fill="#37352f" d="M7.5 7.5h1.8l3.9 5.2V7.5h1.8v9h-1.8l-3.9-5.2V16.5H7.5V7.5z" />
     </svg>
   )
 }
