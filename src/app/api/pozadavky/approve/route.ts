@@ -50,7 +50,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     name: rawBy?.name ?? 'Appmixer',
   }
   const jobAdUrl    = body.jobAdUrl    as string | undefined
-  const linkedInUrl = body.linkedInUrl as string | undefined
+  const facebookUrl = body.facebookUrl as string | undefined
 
   if (!requestId) {
     return NextResponse.json(
@@ -86,7 +86,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     req.approval.decidedByName = approvedBy.name
     req.status = 'approved'
     if (jobAdUrl)    req.jobAdUrl    = jobAdUrl
-    if (linkedInUrl) req.linkedInUrl = linkedInUrl
+    if (facebookUrl) req.facebookUrl = facebookUrl
     req.events.push({
       id:      nanoid(),
       at:      now,

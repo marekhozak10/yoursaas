@@ -106,7 +106,7 @@ export type RoleRequest = {
   callbackToken: string
   flowRunId?: string
   jobAdUrl?: string
-  linkedInUrl?: string
+  facebookUrl?: string
 }
 
 export type Store = {

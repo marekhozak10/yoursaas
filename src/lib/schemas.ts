@@ -96,7 +96,7 @@ export const RoleRequestSchema = z.object({
   callbackToken: z.string(),
   flowRunId:     z.string().optional(),
   jobAdUrl:      z.string().optional(),
-  linkedInUrl:   z.string().optional(),
+  facebookUrl:   z.string().optional(),
 })
 
 export const StoreSchema = z.object({

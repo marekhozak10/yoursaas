@@ -130,7 +130,7 @@ export const copy = {
     costCaption:  'včetně odvodů',
     waitingState: 'Dokud někdo neklikne, nikde se nic nezveřejní ani nezaloží.',
     jobAdLink:    'Náhled inzerátu',
-    linkedInLink: 'LinkedIn post',
+    facebookLink: 'Facebook post',
   },
 
   /* ── Timeline summaries ─────────────────────────────────────────────── */

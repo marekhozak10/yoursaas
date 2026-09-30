@@ -5,7 +5,7 @@ import { revalidatePath } from 'next/cache'
 /**
  * POST /api/pozadavky/links
  *
- * Sets jobAdUrl and/or linkedInUrl on a request. Call this from Appmixer
+ * Sets jobAdUrl and/or facebookUrl on a request. Call this from Appmixer
  * after publishing the job ad and LinkedIn post.
  * Auth: Bearer <callbackToken>
  *
@@ -13,7 +13,7 @@ import { revalidatePath } from 'next/cache'
  *   {
  *     "requestId": "string",
  *     "jobAdUrl":    "https://docs.google.com/...",   // optional
- *     "linkedInUrl": "https://www.linkedin.com/..."   // optional
+ *     "facebookUrl": "https://www.linkedin.com/..."   // optional
  *   }
  *
  * Responses:
@@ -43,7 +43,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
 
   const requestId   = body.requestId   as string | undefined
   const jobAdUrl    = body.jobAdUrl    as string | undefined
-  const linkedInUrl = body.linkedInUrl as string | undefined
+  const facebookUrl = body.facebookUrl as string | undefined
 
   if (!requestId) {
     return NextResponse.json({ error: 'missing required field: requestId' }, { status: 400 })
@@ -60,7 +60,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     if (request.callbackToken !== token) { result = 'invalid_token'; return }
 
     if (jobAdUrl)    request.jobAdUrl    = jobAdUrl
-    if (linkedInUrl) request.linkedInUrl = linkedInUrl
+    if (facebookUrl) request.facebookUrl = facebookUrl
 
     request.updatedAt = new Date().toISOString()
     result = 'ok'

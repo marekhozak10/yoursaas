@@ -243,7 +243,7 @@ export function DetailLive({ initialRequest, user, users, teams }: Props) {
                       )}
                     </span>
                   </div>
-                  {(request.jobAdUrl || request.linkedInUrl) && (
+                  {(request.jobAdUrl || request.facebookUrl) && (
                     <div className="mt-3 pt-3 border-t border-hairline flex flex-col gap-2">
                       {request.jobAdUrl && (
                         <a
@@ -256,15 +256,15 @@ export function DetailLive({ initialRequest, user, users, teams }: Props) {
                           {copy.detail.jobAdLink}
                         </a>
                       )}
-                      {request.linkedInUrl && (
+                      {request.facebookUrl && (
                         <a
-                          href={request.linkedInUrl}
+                          href={request.facebookUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 text-[12px] font-medium text-[#0a66c2] hover:underline"
+                          className="inline-flex items-center gap-2 text-[12px] font-medium text-[#1877f2] hover:underline"
                         >
-                          <LinkedInIcon />
-                          {copy.detail.linkedInLink}
+                          <FacebookIcon />
+                          {copy.detail.facebookLink}
                         </a>
                       )}
                     </div>
@@ -379,7 +379,7 @@ export function DetailLive({ initialRequest, user, users, teams }: Props) {
             </div>
 
             {/* Links — shown below timeline when approved and URLs set */}
-            {request.approval?.decision === 'approved' && (request.jobAdUrl || request.linkedInUrl) && (
+            {request.approval?.decision === 'approved' && (request.jobAdUrl || request.facebookUrl) && (
               <div className="px-4 py-3 border-t border-hairline flex flex-col gap-2">
                 {request.jobAdUrl && (
                   <a
@@ -392,15 +392,15 @@ export function DetailLive({ initialRequest, user, users, teams }: Props) {
                     {copy.detail.jobAdLink}
                   </a>
                 )}
-                {request.linkedInUrl && (
+                {request.facebookUrl && (
                   <a
-                    href={request.linkedInUrl}
+                    href={request.facebookUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-[11.5px] font-medium text-[#0a66c2] hover:underline"
+                    className="inline-flex items-center gap-2 text-[11.5px] font-medium text-[#1877f2] hover:underline"
                   >
-                    <LinkedInIcon />
-                    {copy.detail.linkedInLink}
+                    <FacebookIcon />
+                    {copy.detail.facebookLink}
                   </a>
                 )}
               </div>
@@ -427,12 +427,11 @@ function GoogleDocIcon() {
   )
 }
 
-function LinkedInIcon() {
+function FacebookIcon() {
   return (
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
-      <rect width="24" height="24" rx="4" fill="#0a66c2" />
-      <path d="M7 9h2v9H7V9zm1-1.5a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5z" fill="#fff" />
-      <path d="M11 9h2v1.2c.5-.8 1.4-1.4 2.5-1.4 2 0 3 1.3 3 3.3V18h-2v-5.5c0-1-.4-1.8-1.5-1.8s-2 .8-2 2V18h-2V9z" fill="#fff" />
+      <rect width="24" height="24" rx="4" fill="#1877f2" />
+      <path d="M13 21v-7h2.5l.5-3H13V9.5c0-.8.4-1.5 1.5-1.5H16V5.5S15 5 13.5 5C11.1 5 10 6.4 10 8.5V11H7.5v3H10v7h3z" fill="#fff" />
     </svg>
   )
 }
