@@ -63,6 +63,7 @@ export async function triggerFlow(request: RoleRequest): Promise<void> {
   const timer = setTimeout(() => controller.abort(), 5000)
 
   try {
+    console.log('[appmixer] triggering webhook:', triggerUrl)
     const res = await fetch(triggerUrl, {
       method:  'POST',
       headers: {
@@ -74,12 +75,16 @@ export async function triggerFlow(request: RoleRequest): Promise<void> {
       signal: controller.signal,
     })
     clearTimeout(timer)
+    console.log('[appmixer] webhook response status:', res.status)
     if (!res.ok) {
+      const text = await res.text().catch(() => '')
+      console.log('[appmixer] webhook error body:', text)
       await appendTriggerFailed(request.id)
       await startScriptedRun(request.id)
     }
-  } catch {
+  } catch (err) {
     clearTimeout(timer)
+    console.log('[appmixer] webhook fetch error:', err)
     await appendTriggerFailed(request.id)
     await startScriptedRun(request.id)
   }
